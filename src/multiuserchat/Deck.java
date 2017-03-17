@@ -1,4 +1,4 @@
-package Multiplayer;
+package multiuserchat;
 
 import java.util.ArrayList;
 import java.util.Collections;

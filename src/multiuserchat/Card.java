@@ -1,4 +1,4 @@
-package Multiplayer;
+package multiuserchat;
 
 public class Card {
 

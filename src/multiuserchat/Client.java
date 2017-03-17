@@ -1,4 +1,4 @@
-package Multiplayer;
+package multiuserchat;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
