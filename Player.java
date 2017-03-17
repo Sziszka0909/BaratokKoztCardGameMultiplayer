@@ -1,6 +1,7 @@
 package Multiplayer;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -60,17 +61,23 @@ public class Player {
 	}
 
 	public int chooseSkill() {
+		boolean continueInput = true;
 		Scanner input = new Scanner(System.in);
-		System.out.println("Válassz egy tulajdonságot. (Igazmondás: [1]; Balhézás: [2]; Féltékenység: [3])");
-		int inp = 0;
-		while (inp > 3 || inp < 1) {
-			inp = input.nextInt();
-			if (inp > 3 || inp < 1) {
-				System.err.println("1-3 közötti számot adj meg!!!");
+		do {
+			try {
+				System.out.println("Válassz egy tulajdonságot. (Igazmondás: [1]; Balhézás: [2]; Féltékenység: [3])");
+				int number = input.nextInt();
+				if (number > 0 && number < 4) {
+					continueInput = false;
+					return number;
+				}
+			} catch (InputMismatchException e) {
+				System.err.println("SZÁMOT adj meg!!!\n");
+				input.nextLine();
 			}
 
-		}
-		return inp;
+		} while (continueInput);
+		return 0;
 	}
 
 	public int showWinner(int inp, Player player) {

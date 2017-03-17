@@ -1,5 +1,7 @@
 package Multiplayer;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -36,14 +38,15 @@ public class Main {
 		deck.cardList.add(new Card("Berényi Balázs", 3, 8, 7));
 		deck.cardList.add(new Card("A pincér", 1, 1, 1));
 		deck.cardList.add(new Card("Novák László", 9, 8, 3));
-		Player player1 = new Player("Ubul", 1);
-		Player player2 = new Player("Endre", 2);
+		Scanner name = new Scanner(System.in);
+		System.out.println("Első játékos neve: ");
+		String name1 = name.nextLine();
+		System.out.println("Második játékos neve: ");
+		String name2 = name.nextLine();
+		Player player1 = new Player(name1, 1);
+		Player player2 = new Player(name2, 2);
 		player1.getCards(deck.cardList);
 		player2.getSecondPlayerCards(deck.cardList, player1);
-		player1.printIn(player1.cardsInHand);
-		System.out.println("---------------------");
-		player2.printIn(player2.cardsInHand);
-		System.out.println("---------------------");
 		int currentPlayer1Card = 0;
 		int currentPlayer2Card = 0;
 		int round = 1;
