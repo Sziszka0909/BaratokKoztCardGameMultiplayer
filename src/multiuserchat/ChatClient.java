@@ -50,7 +50,7 @@ public class ChatClient {
 	 * Prompt for and return the address of the server.
 	 */
 	private String getServerAddress() {
-		return JOptionPane.showInputDialog(frame, "Enter IP Address of the Server:", "Welcome to the Chatter",
+		return JOptionPane.showInputDialog(frame, "Enter IP Address of the Server:", "Welcome to the BK Chat Room",
 				JOptionPane.QUESTION_MESSAGE);
 	}
 
